@@ -279,8 +279,8 @@
   }
   
   .card-img-wrapper {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 65%;
     background-color: #262626;
     border-radius: 0.5rem;
   }
@@ -577,4 +577,19 @@
   font-weight: bold;
   font-family: var(--font-primary);
   margin-left: 0rem;
+}
+.button {
+  display: block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  padding: 10px 5px;
+  margin:18px;
+  background: linear-gradient(to left, #a044ff, #18bfbb);
+  color: #FFF;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-family: var(--font-primary);
 }
