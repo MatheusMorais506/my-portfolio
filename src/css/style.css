@@ -228,11 +228,16 @@
     background-color: #a044ff;
   }
   .sessao-conhecimentos {
-    background-color: #f5f5f5;
+    background-color: #dadada;
     height: 100%;
     display: flex;
   }
   
+  .sessao-projetos{
+    height: 100%;
+    display:flex;
+  }
+
   .sessao-header{
     margin-top: 2rem;
     margin-left: 12rem;
@@ -273,6 +278,8 @@
   }
   
   .card {
+    margin-top: 9rem;
+    margin-left: 2rem;
     width: 18rem;
     height: 25rem;
     position: relative;
@@ -303,7 +310,7 @@
     bottom: 0;
     opacity: 0;
     visibility: hidden;
-    padding: 2rem;
+    padding:2rem;
     text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 0.6);
     transition: all 0.3s;
   }
@@ -313,21 +320,9 @@
     font-size: 2rem;
     font-weight: 500;
     color: #eee;
-  }
-  
-  .card-info h3 {
-    font-family: var(--font-action);
-    font-weight: bolder;
-    color: #ff4081;
-    margin-bottom: 1.5rem;
-  }
-  
-  .card-info p {
-    font-family: var(--font-secundary);
-    color: #eee;
-    font-weight: 400;
-    width: 80%;
-    margin-bottom: 2rem;
+    position: relative;
+    margin-bottom:5rem;
+    margin-left: 1.2rem;
   }
   
   .btn {
