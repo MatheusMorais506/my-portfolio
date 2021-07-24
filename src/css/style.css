@@ -18,19 +18,9 @@ html{
 }  
 .container{
   display: grid;
-  /*grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows:0.9fr 0.5fr 1fr 0.8fr
-  0.8fr 0.1fr;*/
   grid-template-columns: 1fr;
-  grid-template-rows:0.9fr 0.5fr 1fr 0.8fr
+  grid-template-rows:0.8fr 0.5fr 1fr 0.5fr
   0.8fr 0.1fr ;
-  /*grid-template-areas: 
-  "home home home home"
-  "sobre sobre sobre sobre"
-  "skills skills skills skills ="
-  "projetos projetos projetos projetos"
-  "contato contato contato contato"
-  "footer footer footer footer";*/
   grid-template-areas: 
   "home"
   "sobre"
@@ -224,8 +214,8 @@ background-color: #a044ff;
 }
 #button {
   display: block;
-  width: 120px;
-  height: 30px;
+  width:8rem;
+  height:3.5rem;
   line-height: 30px;
   padding: 10px 5px;
   margin:18px;
@@ -346,28 +336,38 @@ background-color: #a044ff;
 .card{
   display: flex;
   flex-direction: row;
+  justify-content:space-around;
+  margin-top:4rem;
 }
-
+.card-wraper{
+  position: relative;
+}
 .card-img{
   width:15rem;
   height:12rem;
-  
 }
-.card .card-wraper .overlay{
+.desc{
   position: absolute;
-  opacity:0;
-  transition: opacity 0.3s ease-in-out;
-  background: url(../images/overlay-bg.png) repeat;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding-top:10.4rem;
+  font-size:1.6rem;
+  color: #000;
+  font-weight: bold;
+  background: rgb(137,137,143);
+  background: linear-gradient(90deg, rgba(137,137,143,0.9752275910364145) 0%, rgba(29,110,125,0) 35%, rgba(0,212,255,1) 100%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s, visibility .2s;
 }
+.card-wraper:hover .desc{
+  visibility: visible;
+  opacity: 1;
 
-
-
-
-
-
-
-
-
+}
 
 /*5 Contato****************************/
 .sessao-contato {
@@ -511,11 +511,14 @@ footer{
 }
 
 /* Media Screen*/
-@media (max-width:600px){
+@media (max-width:710px){
+  .container{
+    grid-template-rows:0.9fr 0.5fr 1fr 1fr
+    0.8fr 0.1fr ;
+  }
   #sobre{
     display: flex;
     flex-direction: column;
-    
     align-items: center;
   }
   .projetos{
@@ -526,6 +529,9 @@ footer{
   .card{
     display: flex;
     flex-direction: column;
+  }
+  .card-wraper{
+    padding: 2rem;
   }
 }
 
