@@ -18,9 +18,29 @@ html{
 }  
 .container{
   display: grid;
-  grid-template-rows:0.7fr 0.4fr 1fr 0.8fr
-  0.8fr 0.1fr;
+  /*grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:0.9fr 0.5fr 1fr 0.8fr
+  0.8fr 0.1fr;*/
+  grid-template-columns: 1fr;
+  grid-template-rows:0.9fr 0.5fr 1fr 0.8fr
+  0.8fr 0.1fr ;
+  /*grid-template-areas: 
+  "home home home home"
+  "sobre sobre sobre sobre"
+  "skills skills skills skills ="
+  "projetos projetos projetos projetos"
+  "contato contato contato contato"
+  "footer footer footer footer";*/
+  grid-template-areas: 
+  "home"
+  "sobre"
+  "skills"
+  "projetos"
+  "contato"
+  "footer";
 }
+
+/*0 - Hamburguer***********************************************/
 .hamburguer {
   width: 2rem;
   height: 2rem;
@@ -78,41 +98,70 @@ html{
 .show-menu .hamburguer:hover span {
   opacity: 1;
 }
+
+/* 0.5 - Menu Lateral*******************************/
+.sidebar {
+  width: 20rem;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: -20rem;
+  transition: all 1s;
+  z-index: 80;
+}
+.show-menu .sidebar {
+  right: 0;
+}
+.menu {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu-item {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.menu-link {
+  font-family: var(--font-action);
+  font-size: 2rem;
+  color: #555;
+  transition: color 1s;
+}
+.menu-link:hover {
+  color: #a044ff;
+}
+.social-media {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.social-media i {
+  background-color: #a044ff;
+  color: rgba(255, 255, 255, 1);
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color 1s;
+}
+.social-media i:hover {
+background-color: #a044ff;
+}
+
+/*1 - Home*************************************/
 #home{
   width: 100%;
   overflow: hidden;
   position:relative;
+  grid-area: home;
 } 
-.sobre{
-  position: relative;
-  background-color:#2b2b2b;
-  display:grid;
-  grid-template-columns: 1fr 4fr;
-} 
-.sessao-conhecimentos {
-  position:relative;
-  background-color: #dadada;
-  display: grid;
-  grid-template-columns:2fr 3fr;
-}
-.sessao-projetos{
-  
-}
-.sessao-contato {
-  width: 100%;
-  background-color: #272727;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-footer{
-  width: 100%;
-  background-color: #17181b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .img-wrapper {
   width: 100%;
   height:100%;
@@ -173,6 +222,22 @@ footer{
   opacity: 0;
   animation: moveBanner 1s 0.9s forwards;
 }
+#button {
+  display: block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  padding: 10px 5px;
+  margin:18px;
+  background: linear-gradient(to left, #a044ff, #18bfbb);
+  color: #FFF;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-family: var(--font-primary);
+  margin-left: 0rem;
+}
 @keyframes moveBanner {
   0% {
     transform: translateY(10rem) rotateY(-30deg);
@@ -182,309 +247,13 @@ footer{
     opacity: 1;
   }
 }  
-.sidebar {
-    width: 20rem;
-    height: 100vh;
-    background-color: #fff;
-    position: fixed;
-    top: 0;
-    right: -20rem;
-    transition: all 1s;
-    z-index: 80;
-  }
-  
-  .show-menu .sidebar {
-    right: 0;
-  }
-  
-  .menu {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .menu-item {
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  .menu-link {
-    font-family: var(--font-action);
-    font-size: 2rem;
-    color: #555;
-    transition: color 1s;
-  }
-  
-  .menu-link:hover {
-    color: #a044ff;
-  }
-  
-  .social-media {
-    position: absolute;
-    bottom: 2rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  .social-media i {
-    background-color: #a044ff;
-    color: rgba(255, 255, 255, 1);
-    height: 2.5rem;
-    width: 2.5rem;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    transition: background-color 1s;
-  }
-  
-.social-media i:hover {
-  background-color: #a044ff;
-}
-.sessao-header{
-  margin: top 2px;
-}
-.sessao-header h1 {
-  font-family: var(--font-primary);
-  font-size: 2rem;
-  color: #000;
-  margin-left: 2rem;
-  margin-top: 2rem;
-  text-decoration:underline #18bfbb;
-}
-.conhecimento-header {
-  display: flex;
-  color: #18bfbb;
-}  
-.conhecimento-header i {
-  font-size: 2.5rem;
-  margin-left:0.5rem;
-  margin-top:3rem;
-}  
-.conhecimento-header h3 {
-  font-family: var(--font-secundary);
-  font-size: 1.2rem;
-  padding-left:0.5rem;
-  margin-top:3.5rem;
-}  
-.conhecimento-text {
-  font-family: var(--font-secundary);
-  margin-top: 1rem;
-  line-height:0rem;
-}
-.projetos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.card {
-  margin-top: 9rem;
-  margin-left:0rem;
-  width: 18rem;
-  height: 25rem;
+
+/*2 Sobre***********************************/
+#sobre{
   position: relative;
-}  
-.card-img-wrapper {
-  width: 80%;
-  height: 65%;
-  background-color: #262626;
-  border-radius: 0.5rem;
-}  
-.card-img-wrapper img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.5rem;
-  opacity: 0.8;
-  transition: opacity 0.3s;
-}  
-.card:hover .card-img-wrapper img {
-  opacity: 0.5;
-}
-  
-  .card-info {
-    position: absolute;
-    bottom: 0;
-    opacity: 0;
-    visibility: hidden;
-    padding:2rem;
-    text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 0.6);
-    transition: all 0.3s;
-  }
-  
-  .card-info h2 {
-    font-family: var(--font-primary);
-    font-size: 2rem;
-    font-weight: 500;
-    color: #eee;
-    position: relative;
-    margin-bottom:5rem;
-    margin-left: 1.2rem;
-  }
-  
-  .btn {
-    background: #18bfbb;
-    background: -webkit-linear-gradient(to right, #a044ff, #18bfbb);
-    background: linear-gradient(to left, #a044ff, #18bfbb);
-    font-family: var(--font-action);
-    color: #eee;
-    border-radius: 0.5rem;
-    border: none;
-    box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.4);
-  }
-  
-  .card-info button {
-    width: 8rem;
-    height: 2.5rem;
-  }
-  
-  .card:hover .card-info {
-    bottom: 2rem;
-    opacity: 1;
-    visibility: visible;
-  }
-  
-
-  
-  .contato-wrapper {
-    width: 60%;
-    height: 30rem;
-    display: flex;
-    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.5);
-  }
-  
-  .contato-left {
-    width: 35%;
-    background: linear-gradient(rgba(15, 15, 15, 0.6), rgba(22, 22, 22, 0.9)),
-      url(../images/contato.jpg);
-    background-size: cover;
-  }
-  
-  .contato-right {
-    width: 65%;
-    background-color: #eee;
-    padding: 1rem 3rem 3rem 3rem;
-  }
-  
-  .sessao-contato h1 {
-    width: 100%;
-    text-align: center;
-    font-family: var(--font-primary);
-    color: #272727;
-    font-size: 3rem;
-    font-weight: lighter;
-  }
-  
-  .sessao-contato form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .input-group {
-    position: relative;
-  }
-  
-  .field {
-    background: transparent;
-    border: none;
-    width: 20rem;
-    font-size: 1.5rem;
-    font-family: var(--font-secundary);
-    border-bottom: 2px dashed #636363;
-    height: 3rem;
-    outline: none;
-    margin: 1rem 0;
-  }
-  
-  .input-group textarea {
-    padding-top: 1rem;
-    max-width: 25rem;
-    max-height: 3rem;
-  }
-  
-  .field-label {
-    position: absolute;
-    left: 0;
-    top: 2rem;
-    font-size: 1rem;
-    font-family: var(--font-secundary);
-    text-transform: uppercase;
-    transition: all 0.3s;
-  }
-  
-  .field:focus ~ label {
-    top: 0;
-    font-size: 0.7rem;
-  }
-  
-  .field:focus {
-    border-bottom: 1px solid;
-  }
-  
-  .btn-submit {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    width: 80%;
-    height: 2.5rem;
-    margin-top: 1rem;
-    letter-spacing: 0.2rem;
-    cursor: pointer;
-    text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
-  }
-  
-  .preenchido{
-      pointer-events: none;
-  }
-  
-
-  
-  .footer-content{
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .footer-content p{
-    font-family: var(--font-secundary);
-    color: #a7a7a7;
-    font-size: 1.2rem;
-  }
-  
-  .social-list a{
-    margin: 0 2rem;
-    color: #a7a7a7;
-    font-size: 1.3rem;
-  }
-  
-  .social-list ul {
-    display: flex;
-  }
-  
-  #link-topo{
-    position: fixed;
-    right: 3rem;
-    bottom: 3rem;
-    width: 3rem;
-    height: 3rem;
-    background: #18bfbb;
-    background: -webkit-linear-gradient(to right, #a044ff, #18bfbb);
-    background: linear-gradient(to left, #a044ff, #18bfbb);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    border-radius: .3rem;
-    box-shadow:  0 0.1rem 0.6rem #00000009;
-  }
-
-.info-columns{
-  display: flex;
-  flex-direction:column;
+  background-color:#2b2b2b;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 } 
 .profile{
   width: 114px;
@@ -508,6 +277,48 @@ footer{
   font-size: 0.9rem;
   line-height:1rem;
 }
+.info-columns{
+  display: flex;
+  flex-direction:column;
+} 
+
+/*3 conhecimentos(skills)********************/
+.sessao-conhecimentos {
+  position:relative;
+  background-color: #dadada;
+  display: flex;
+  flex-direction: column;
+  /*display: grid;
+  grid-template-columns:2fr 3fr;*/
+  grid-area: skills;
+}
+.sessao-header{
+  margin: top 2px;
+}
+.sessao-header h1 {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  color: #000;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  text-decoration:underline #18bfbb;
+  align-items: center;
+}
+.conhecimento-header {
+  display: flex;
+  color: #18bfbb;
+}  
+.conhecimento-header i {
+  font-size: 2.5rem;
+  margin-left:0.5rem;
+  margin-top:3rem;
+}  
+.conhecimento-header h3 {
+  font-family: var(--font-secundary);
+  font-size: 1.2rem;
+  padding-left:0.5rem;
+  margin-top:3.5rem;
+} 
 .bar-expand {
   margin-left:0.8rem;
   background: linear-gradient(to left, #a044ff, #18bfbb);
@@ -516,40 +327,226 @@ footer{
   height:1.3rem;
   border-radius: 3px 0 0 3px;
 }
-#button {
-  display: block;
-  width: 120px;
-  height: 30px;
-  line-height: 30px;
-  padding: 10px 5px;
-  margin:18px;
-  background: linear-gradient(to left, #a044ff, #18bfbb);
-  color: #FFF;
-  border-radius: 5px;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-  font-family: var(--font-primary);
-  margin-left: 0rem;
-}
-.button {
-  display: block;
-  width: 120px;
-  height: 30px;
-  line-height: 30px;
-  padding: 10px 5px;
-  margin:18px;
-  background: linear-gradient(to left, #a044ff, #18bfbb);
-  color: #FFF;
-  border-radius: 5px;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-  font-family: var(--font-primary);
-}
 .bootstrap{
   margin-bottom:3rem;
 }
-@media only screen and(max-width:550px){
- 
+
+/*4 Projetos*******************************/
+.projetos{
+  background: #ebeeee;
+  grid-area: projetos;
 }
+#title-projetos h2{
+  color: #000;
+  text-decoration: underline #18bfbb;
+  margin-top:1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.card{
+  display: flex;
+  flex-direction: row;
+}
+
+.card-img{
+  width:15rem;
+  height:12rem;
+  
+}
+.card .card-wraper .overlay{
+  position: absolute;
+  opacity:0;
+  transition: opacity 0.3s ease-in-out;
+  background: url(../images/overlay-bg.png) repeat;
+}
+
+
+
+
+
+
+
+
+
+
+/*5 Contato****************************/
+.sessao-contato {
+  width: 100%;
+  background-color: #272727;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: contato;
+}
+.contato-wrapper {
+  width: 60%;
+  height: 30rem;
+  display: flex;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.5);
+}
+.contato-left {
+  width: 35%;
+  background: linear-gradient(rgba(15, 15, 15, 0.6), rgba(22, 22, 22, 0.9)),
+    url(../images/contato.jpg);
+  background-size: cover;
+}
+.contato-right {
+  width: 65%;
+  background-color: #eee;
+  padding: 1rem 3rem 3rem 3rem;
+}
+.sessao-contato h1 {
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-primary);
+  color: #272727;
+  font-size: 3rem;
+  font-weight: lighter;
+}
+.sessao-contato form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-group {
+  position: relative;
+}
+.field {
+  background: transparent;
+  border: none;
+  width: 20rem;
+  font-size: 1.5rem;
+  font-family: var(--font-secundary);
+  border-bottom: 2px dashed #636363;
+  height: 3rem;
+  outline: none;
+  margin: 1rem 0;
+}
+.input-group textarea {
+  padding-top: 1rem;
+  max-width: 25rem;
+  max-height: 3rem;
+}
+.field-label {
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  font-size: 1rem;
+  font-family: var(--font-secundary);
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.field:focus ~ label {
+  top: 0;
+  font-size: 0.7rem;
+}
+.field:focus {
+  border-bottom: 1px solid;
+}
+.btn-submit {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  width: 80%;
+  height: 2.5rem;
+  margin-top: 1rem;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+.btn {
+  background: #18bfbb;
+  background: -webkit-linear-gradient(to right, #a044ff, #18bfbb);
+  background: linear-gradient(to left, #a044ff, #18bfbb);
+  font-family: var(--font-action);
+  color: #eee;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.4);
+}
+
+/*6 Footer*********************************/
+footer{
+  width: 100%;
+  background-color: #17181b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: footer;
+}
+.footer-content{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-content p{
+  font-family: var(--font-secundary);
+  color: #a7a7a7;
+  font-size: 1.2rem;
+}
+.social-list a{
+  margin: 0 2rem;
+  color: #a7a7a7;
+  font-size: 1.3rem;
+}
+.social-list ul {
+  display: flex;
+}
+#link-topo{
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  width: 3rem;
+  height: 3rem;
+  background: #18bfbb;
+  background: -webkit-linear-gradient(to right, #a044ff, #18bfbb);
+  background: linear-gradient(to left, #a044ff, #18bfbb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: .3rem;
+  box-shadow:  0 0.1rem 0.6rem #00000009;
+}
+
+/* Media Screen*/
+@media (max-width:600px){
+  #sobre{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+  }
+  .projetos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+ 
+
+
+
+  
+ 
+  
+
+  
+  
+
+  
+  
+
+
+
+
+
+
+
+
