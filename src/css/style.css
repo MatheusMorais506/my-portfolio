@@ -274,6 +274,10 @@ html {
     grid-template-columns: 1.5fr 3.5fr;
 }
 
+.profile-wraper {
+    z-index: 2;
+}
+
 .profile {
     width: 120px;
     height: 120px;
@@ -414,7 +418,9 @@ html {
     text-align: center;
 }
 
-.card-wraper {}
+.card-wraper {
+    position: relative;
+}
 
 .card-img {
     width: 14rem;
