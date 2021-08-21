@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">  
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="manifest" href="images/site.webmanifest">
     <title>MeuPortfólio</title>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <div class="container">
 
-        <div class="hamburguer">
-          <div class="line" id="line1"></div>
-          <div class="line" id="line2"></div>
-          <div class="line" id="line3"></div>
-          <span>fechar</span>
+        <div class="hb">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+            <span>fechar</span>
         </div>
         <aside class="sidebar">
-          <nav>
-            <ul class="menu">
-              <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
-              <li class="menu-item"><a href="#sobre" class="menu-link">Sobre</li>
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+                    <li class="menu-item"><a href="#sobre" class="menu-link">Sobre</li>
               <li class="menu-item"><a href="#conhecimentos" class="menu-link">Skills</a></li>
-              <li class="menu-item"><a href="#projetos" class="menu-link">Projetos</a></li>
-              <li class="menu-item"><a href="#contato" class="menu-link">Contato</a></li>
-            </ul>
-          </nav>
-          <div class="social-media">
-            <a href="https://www.linkedin.com/in/matheus-morais-b12b77194/" 
-            rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/MatheusMorais506"
-            rel="noopener noreferrer" target="_blank"><i class="fab fa-github-alt"></i></a>
-          </div>
+                    <li class="menu-item"><a href="#projetos" class="menu-link">Projetos</a></li>
+                    <li class="menu-item"><a href="#contato" class="menu-link">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/matheus-morais-b12b77194/" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/MatheusMorais506" rel="noopener noreferrer" target="_blank"><i class="fab fa-github-alt"></i></a>
+            </div>
         </aside>
 
         <header id="home">
@@ -50,170 +50,172 @@
         </header>
 
         <div id="sobre">
-          <div class="profile-wraper">
-            <img class="profile" alt="profile Matheus Silva" src="images/profile.jpg">
-          </div>
-          <div class="info-columns">
-          <h1 class="sobreTitle">Sobre</h1>
-          <p class="info">Meu nome é Matheus Silva, desenvolvedor web focado em JavaScript(ReactJs).
-            <br>
-            Graduado em Sistemas de Informação.
-            <br>
-            Disponível para oportunidades.
-            <br>
-            Residente em Carapicuíba, SP, Brasil.
-          </p>
-          <h1 class="sobreTitle">Contato</h1>
-          <p class="info">
-            <span>Matheus Silva</span>
-            <br>
-            <span>+55 11 940655493</span>
-            <br>
-            <span>matheus.moraes09@hotmail.com</span>
-          </p>
-          <div class="button-download">
-          <a class="download" 
-          href="https://drive.google.com/file/d/14ANIYpof_ylE4Wo71_eR33xScC59g6NK/view?usp=sharing"
-          target="_blank">
-            <i class="fa fa-download"></i>
-              Download
-          </a>
-          </div>
-          </div>
+            <div class="profile-wraper">
+                <img class="profile" alt="profile Matheus Silva" src="images/profile.jpg">
+            </div>
+            <div class="info-columns">
+                <div class="sobreTitle">
+                    <h1>Sobre</h1>
+                </div>
+                <div class="info">
+                    <p>
+                        Meu nome é Matheus Silva, desenvolvedor web focado em JavaScript(ReactJs).
+                        <br> Graduado em Sistemas de Informação.
+                        <br> Disponível para oportunidades.
+                        <br> Residente em Carapicuíba, SP, Brasil.
+                    </p>
+                </div>
+                <div class="sobreTitle">
+                    <h1>Contato</h1>
+                </div>
+                <div class="info">
+                    <p>Matheus Silva</p>
+                    <p>+55 11 940655493</p>
+                    <p>matheus.moraes09@hotmail.com</p>
+                </div>
+                <div class="button-download">
+                    <button>
+                    <a class="download" href="https://drive.google.com/file/d/14ANIYpof_ylE4Wo71_eR33xScC59g6NK/view?usp=sharing" target="_blank">
+                        <i class="fa fa-download"></i> Download
+                    </a>
+                    </button>
+                </div>
+            </div>
         </div>
 
         <section class="sessao-conhecimentos" id="conhecimentos">
-          <div class="sessao-header">
-            <h1>Skills</h1>
-          </div>
+            <div class="sessao-header">
+                <h1>Skills</h1>
+            </div>
 
-          <div class="conhecimento">
-              
-            <div class="conhecimento-header">
-                <i class="fab fa-html5"></i>
-                <h3>HTML</h3>
-              </div>
-              <span class="bar-expand html5" style="width: 75%;"></span>
-              
-              <div class="conhecimento-header">
-                <i class="fab fa-css3-alt"></i>
-                <h3>CSS</h3>
-              </div>
-              <span class="bar-expand css" style="width: 70%;"></span>
+            <div class="conhecimento">
 
-              <div class="conhecimento-header">
-                <i class="fab fa-js"></i>
-                <h3>Javascript</h3>
-              </div>
-              <span class="bar-expand js" style="width: 75%;"></span>
+                <div class="conhecimento-header">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML</h3>
+                </div>
+                <span class="bar-expand html5" style="width: 75%;"></span>
 
-              <div class="conhecimento-header">
-                <i class="fab fa-github"></i>
-                <h3>Git</h3>
-              </div>
-              <span class="bar-expand git" style="width: 70%;"></span>
-              
-              <div class="conhecimento-header">
-                <i class="fab fa-react"></i>
-                <h3>ReactJS</h3>
-              </div>
-              <span class="bar-expand react" style="width: 75%;"></span>
+                <div class="conhecimento-header">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS</h3>
+                </div>
+                <span class="bar-expand css" style="width: 70%;"></span>
 
-              <div class="conhecimento-header">
-                <i class="fab fa-node-js"></i>
-                <h3>NodeJs</h3>
-              </div>
-              <span class="bar-expand nodejs" style="width: 70%;"></span>
+                <div class="conhecimento-header">
+                    <i class="fab fa-js"></i>
+                    <h3>Javascript</h3>
+                </div>
+                <span class="bar-expand js" style="width: 75%;"></span>
 
-              <div class="conhecimento-header">
-                <i class="fab fa-bootstrap"></i>
-                <h3>Bootstrap</h3>
-              </div>
-              <span class="bar-expand bootstrap" style="width: 75%;"></span>
-            
+                <div class="conhecimento-header">
+                    <i class="fab fa-github"></i>
+                    <h3>Git</h3>
+                </div>
+                <span class="bar-expand git" style="width: 70%;"></span>
+
+                <div class="conhecimento-header">
+                    <i class="fab fa-react"></i>
+                    <h3>ReactJS</h3>
+                </div>
+                <span class="bar-expand react" style="width: 75%;"></span>
+
+                <div class="conhecimento-header">
+                    <i class="fab fa-node-js"></i>
+                    <h3>NodeJs</h3>
+                </div>
+                <span class="bar-expand nodejs" style="width: 70%;"></span>
+
+                <div class="conhecimento-header">
+                    <i class="fab fa-bootstrap"></i>
+                    <h3>Bootstrap</h3>
+                </div>
+                <span class="bar-expand bootstrap" style="width: 75%;"></span>
+
+                <div class="conhecimento-header">
+                    <i class="fab fa-php"></i>
+                    <h3>PHP</h3>
+                </div>
+                <span class="bar-expand php" style="width: 70%;"></span>
+
             </div>
         </section>
 
-       <section class="projetos" id="projetos">
-         <div id="title-projetos">
-           <h2>Projetos</h2>
-         </div>
-         <div class="card">
-           <div class="card-wraper">
-            <a href="https://to-do-list-mu-two.vercel.app"
-             target="_blank" title="To-Do List">
-            <img class="card-img" src="./images/todo.jpg"> 
-            <p class="desc">To-Do List</p>
-            </a>
-           </div>
-          <div class="card-wraper">
-           <a href="https://galeria-five.vercel.app"
-            target="_blank" title="Galeria">
-            <img class="card-img" src="./images/galeria.jpg"> 
-            <p class="desc">Galeria</p> 
-           </a>
-          </div>
-          <div class="card-wraper">
-           <a href="https://calculadora-react-amber.vercel.app"
-            target="_blank" title="Calculadora React">
-            <img class="card-img" src="./images/calculator.jpg">
-            <p class="desc">Calculadora React</p>
-           </a>
-          </div>
-          <div class="card-wraper">
-            <a href="https://info-play.vercel.app"
-             target="_blank" title="App InfoPlay">
-             <img class="card-img" src="./images/InfoPlay.png">
-             <p class="desc"></p>
-            </a>
-           </div>
-        </div>
-       </section>
+        <section class="projetos" id="projetos">
+            <div id="title-projetos">
+                <h2>Projetos</h2>
+            </div>
+            <div class="card">
+                <div class="card-wraper">
+                    <a href="https://to-do-list-mu-two.vercel.app" target="_blank" title="To-Do List">
+                        <img class="card-img" src="./images/todo.jpg">
+                        <p class="desc">To-Do List</p>
+                    </a>
+                </div>
+                <div class="card-wraper">
+                    <a href="https://galeria-five.vercel.app" target="_blank" title="Galeria">
+                        <img class="card-img" src="./images/galeria.jpg">
+                        <p class="desc">Galeria</p>
+                    </a>
+                </div>
+                <div class="card-wraper">
+                    <a href="https://calculadora-react-amber.vercel.app" target="_blank" title="Calculadora React">
+                        <img class="card-img" src="./images/calculator.jpg">
+                        <p class="desc">Calculadora React</p>
+                    </a>
+                </div>
+                <div class="card-wraper">
+                    <a href="https://info-play.vercel.app" target="_blank" title="App InfoPlay">
+                        <img class="card-img" src="./images/InfoPlay.png">
+                        <p class="desc"></p>
+                    </a>
+                </div>
+            </div>
+        </section>
 
 
         <section class="sessao-contato" id="contato">
-          <div class="contato-wrapper">
-            <div class="contato-right">
-              <h1>Contato</h1>
-              <form>
-                <div class="input-group">
-                  <input type="text" class="field" id="nome">
-                  <label for="nome" class="field-label">Nome</label>
+            <div class="contato-wrapper">
+                <div class="contato-right">
+                    <h1>Contato</h1>
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="field" id="nome">
+                            <label for="nome" class="field-label">Nome</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="field" id="email">
+                            <label for="email" class="field-label">E-mail</label>
+                        </div>
+                        <div class="input-group">
+                            <textarea class="field" id="mensagem"></textarea>
+                            <label for="mensagem" class="field-label">Mensagem</label>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Enviar</button>
+                    </form>
                 </div>
-                <div class="input-group">
-                  <input type="text" class="field" id="email">
-                  <label for="email" class="field-label">E-mail</label>
-                </div>
-                <div class="input-group">
-                  <textarea class="field" id="mensagem"></textarea>
-                  <label for="mensagem" class="field-label">Mensagem</label>
-                </div>
-                <button type="submit" class="btn btn-submit">Enviar</button>
-              </form>
             </div>
-          </div>
         </section>
 
         <footer>
-          <div class="footer-content">
-            <p>
-              Matheus Silva - Developer
-            </p>
-            <div class="social-list">
-              <ul>
-                <li><a href="https://www.linkedin.com/in/matheus-morais-b12b77194"
-                  rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://github.com/MatheusMorais506"
-                  rel="noopener noreferrer" target="_blank"><i class="fab fa-github-alt"></i></a></li>
-              </ul>
+            <div class="footer-content">
+                <p>
+                    Matheus Silva - Developer
+                </p>
+                <div class="social-list">
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/matheus-morais-b12b77194" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://github.com/MatheusMorais506" rel="noopener noreferrer" target="_blank"><i class="fab fa-github-alt"></i></a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </footer>
         <a href="#home" id="link-topo">
-          <i class="fas fa-arrow-up"></i>
+            <i class="fas fa-arrow-up"></i>
         </a>
     </div>
-   </body>
+</body>
 
-   <script src="js/script.js"></script>
+<script src="js/script.js"></script>
+
 </html>
