@@ -411,15 +411,17 @@ html {
     flex-direction: row;
     justify-content: space-around;
     margin-top: 4rem;
+    text-align: center;
 }
 
-.card-wraper {
-    position: relative;
-}
+.card-wraper {}
 
 .card-img {
-    width: 15rem;
+    width: 14rem;
     height: 12rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    align-items: center;
 }
 
 .desc {
