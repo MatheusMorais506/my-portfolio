@@ -178,20 +178,20 @@
             <div class="contato-wrapper">
                 <div class="contato-right">
                     <h1>Contato</h1>
-                    <form>
+                    <form id="contact-form" method="POST" action="send" enctype="multipart/form-data">
                         <div class="input-group">
-                            <input type="text" class="field" id="nome">
+                            <input type="text" class="field" id="nome" name="name" required>
                             <label for="nome" class="field-label">Nome</label>
                         </div>
                         <div class="input-group">
-                            <input type="text" class="field" id="email">
+                            <input type="text" class="field" id="email" name="email" required>
                             <label for="email" class="field-label">E-mail</label>
                         </div>
                         <div class="input-group">
-                            <textarea class="field" id="mensagem"></textarea>
+                            <textarea class="field" id="mensagem" name="message" required></textarea>
                             <label for="mensagem" class="field-label">Mensagem</label>
                         </div>
-                        <button type="submit" class="btn btn-submit">Enviar</button>
+                        <button type="submit" value="submit" class="btn btn-submit">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -214,8 +214,10 @@
             <i class="fas fa-arrow-up"></i>
         </a>
     </div>
-</body>
 
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
 
 </html>
