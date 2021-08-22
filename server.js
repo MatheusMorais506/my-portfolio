@@ -10,15 +10,20 @@ const app = express();
 
 app.use(cors({ origin: "*" }));
 
-app.use("/src", express.static(process.cwd() + "/src"));
+app.use("/public", express.static(process.cwd() + "/public"));
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.live.com",
+    host: "smtp-mail.outlook.com",
     port: 587,
+    secure: false,
     auth: {
+        type: "login",
         user: process.env.EMAIL,
         pass: process.env.PASS,
     },
+    //tls: {
+    //  rejectUnauthorized: false,
+    //},
 });
 
 transporter.verify(function(error, success) {
@@ -39,6 +44,7 @@ app.post("/send", (req, res) => {
             data[property] = fields[property].toString();
         });
         console.log(data);
+
         const mail = {
             from: `${data.name} <${data.email}>`,
             to: process.env.EMAIL,
@@ -58,7 +64,7 @@ app.post("/send", (req, res) => {
 
 
 app.route("/").get(function(req, res) {
-    res.sendFile(process.cwd() + "/src/index.html");
+    res.sendFile(process.cwd() + "/public/index.html");
 });
 
 app.listen(PORT, () => {
