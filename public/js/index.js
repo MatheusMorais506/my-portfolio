@@ -10,7 +10,7 @@ const formEvent = form.addEventListener("submit", (event) => {
 
 const sendMail = (mail) => {
 
-    fetch("https://my-portfolio-three-taupe.vercel.app/send", {
+    fetch("my-portfolio-three-taupe.vercel.app/send", {
         method: "post",
         body: mail,
     }).then((response) => {
