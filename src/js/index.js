@@ -13,7 +13,7 @@ const sendMail = (mail) => {
     fetch("https://matheus-portfolio.vercel.app/send", {
         method: "post",
         body: mail,
-    }).then(response => {
+    }).then((response) => {
         return response.json();
     });
 };

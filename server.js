@@ -2,17 +2,15 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const multiparty = require('multiparty');
 require('dotenv').config();
+const cors = require('cors');
+
+const PORT = process.env.PORT || 3050;
 
 const app = express();
 
-app.route("/").get(function(req, res) {
-    res.sendFile(process.cwd() + "/index.html");
-});
+app.use(cors({ origin: "*" }));
 
-const PORT = process.env.PORT || 3050;
-app.listen(PORT, () => {
-    console.log(`Servidor na porta ${PORT}`);
-})
+app.use("/src", express.static(process.cwd() + "/src"));
 
 const transporter = nodemailer.createTransport({
     host: "smtp.live.com",
@@ -23,7 +21,7 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-transporter.verify(function(error, sucess) {
+transporter.verify(function(error, success) {
     if (error) {
         console.log(error);
     } else {
@@ -40,11 +38,10 @@ app.post("/send", (req, res) => {
         Object.keys(fields).forEach(function(property) {
             data[property] = fields[property].toString();
         });
-
+        console.log(data);
         const mail = {
-            from: data.name,
+            from: `${data.name} <${data.email}>`,
             to: process.env.EMAIL,
-            subject: data.subject,
             text: `${data.name} <${data.email}> \n${data.message}`,
         };
 
@@ -58,3 +55,12 @@ app.post("/send", (req, res) => {
         })
     })
 });
+
+
+app.route("/").get(function(req, res) {
+    res.sendFile(process.cwd() + "/src/index.html");
+});
+
+app.listen(PORT, () => {
+    console.log(`Servidor na porta ${PORT}`);
+})
