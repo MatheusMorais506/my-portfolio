@@ -1,2 +1,5 @@
-# HTML CSS Javascript
-# Criando Portfolio 
+# Portfolio Developer
+
+    - Javascript
+    - HTML
+    - CSS
